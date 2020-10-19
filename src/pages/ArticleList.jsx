@@ -8,20 +8,21 @@ class ArticleList extends Component {
         isLoading: true,
     }
 
-    componentDidMount() {
+    fetchArticles = () => {
         axios.get(`https://fe-nc-news-api.herokuapp.com/api/articles?topic=${this.props.slug}`)
         .then(({data: {articles}}) => {
             this.setState({articles, isLoading: false})
         })
     }
 
+    componentDidMount() {
+        this.fetchArticles();
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if(prevProps.slug !== this.props.slug) {
-            axios.get(`https://fe-nc-news-api.herokuapp.com/api/articles?topic=${this.props.slug}`)
-            .then(({data: {articles}}) => {
-                this.setState({articles, isLoading: false})
-        })
-    }
+            this.fetchArticles();
+        }
     }
 
     render() {
