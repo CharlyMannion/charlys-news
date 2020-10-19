@@ -15,7 +15,6 @@ class NavBar extends Component {
     };
 
     render() {
-        console.log(this.state, "STATE IN NAVBAR")
         const {topics} = this.state
         return (
             <nav>

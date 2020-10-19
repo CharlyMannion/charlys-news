@@ -9,15 +9,16 @@ class ArticleList extends Component {
     }
 
     fetchArticles = () => {
-        axios.get(`https://fe-nc-news-api.herokuapp.com/api/articles?topic=${this.props.slug}`)
+        axios.get('https://fe-nc-news-api.herokuapp.com/api/articles', {params: {topic: this.props.slug}})
         .then(({data: {articles}}) => {
+            console.log(articles, "ARTICLES")
             this.setState({articles, isLoading: false})
         })
     }
 
     componentDidMount() {
         this.fetchArticles();
-    }
+    } 
 
     componentDidUpdate(prevProps, prevState) {
         if(prevProps.slug !== this.props.slug) {
@@ -26,7 +27,6 @@ class ArticleList extends Component {
     }
 
     render() {
-        console.log(this.props, "article props")
         const {articles, isLoading} = this.state
         if (isLoading) return <Loader/>
         return (
