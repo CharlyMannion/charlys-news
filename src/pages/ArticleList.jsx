@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Loader from '../components/Loader';
 import axios from 'axios';
+import ArticleCard from '../pages/ArticleCard';
 
 class ArticleList extends Component {
     state = {
@@ -32,7 +33,8 @@ class ArticleList extends Component {
         return (
             <main>
                 {articles.map(article => {
-                    return <section key={article.article_id}>{article.title}</section>
+                return <ArticleCard {...article} key={article.article_id}/>
+                    // return <section key={article.article_id}>{article.title}</section>
                 })}
             </main>
         )
