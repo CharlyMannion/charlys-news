@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
 import {Link} from '@reach/router';
+import Loader from '../components/Loader';
+import ErrorDisplay from '../components/ErrorDisplay';
 import {getRoute} from '../api';
 
 class NavBar extends Component {
     state = {
-        topics: []
+        topics: [],
+        isLoading: true,
     }
 
     componentDidMount() {
         getRoute('topics')
         .then(({data: {topics}}) => {
-            this.setState({topics})
+            this.setState({topics, isLoading: false})
+        })
+        .catch(({response}) => {
+            this.setState({
+                error: {
+                    status: response.status,
+                    message: response.data.msg,
+                }
+            })
         })
     };
 
     render() {
-        const {topics} = this.state
+        const {topics, isLoading, error} = this.state
+        if (error) return (
+            <ErrorDisplay {...error}/>
+        )
+        if (isLoading) return <Loader/>
+        
         return (
             <div className="nav">
             <nav>

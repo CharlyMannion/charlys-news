@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Loader from '../components/Loader';
-import {getRoute} from '../api';
+import ErrorDisplay from '../components/ErrorDisplay';
+import {getArticleByTopicSlug} from '../api';
+
+// import axios from 'axios';
 import ArticleCard from '../pages/ArticleCard';
 
 class ArticleList extends Component {
@@ -10,9 +13,17 @@ class ArticleList extends Component {
     }
 
     fetchArticles = () => {
-        getRoute('articles')        
+        getArticleByTopicSlug('articles', this.props.slug)
         .then(({data: {articles}}) => {
             this.setState({articles, isLoading: false})
+        })
+        .catch(({response}) => {
+            this.setState({
+                error: {
+                    status: response.status,
+                    message: response.data.msg,
+                }
+            })
         })
     }
 
@@ -29,8 +40,10 @@ class ArticleList extends Component {
     render() {
         const {slug} = this.props;
         const listTitle = slug || "All";
-
-        const {articles, isLoading} = this.state
+        const {articles, isLoading, error} = this.state
+        if (error) return (
+            <ErrorDisplay {...error}/>
+        )
         if (isLoading) return <Loader/>
 
         return (

@@ -31,6 +31,7 @@ class SingleArticle extends Component {
             <ErrorDisplay {...error}/>
         )
         if (isLoading) return <Loader/>
+        
         return (
             <main className="single-page-article">
             <h3>Topic: {article_info.topic}</h3>

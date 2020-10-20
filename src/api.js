@@ -13,3 +13,8 @@ export const getRoute = (inp) => {
     return instance
         .get(`/${inp}`)
 }
+
+export const getArticleByTopicSlug = (inp, slug) => {
+    return instance
+        .get(`${inp}`, { params: { topic: slug } })
+}
