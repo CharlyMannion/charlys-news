@@ -35,15 +35,15 @@ class ArticleList extends Component {
         if (isLoading) return <Loader/>
 
         return (
-            <ul>
-                <li className="main">
-                    <h3>{listTitle}</h3>
-                    {articles.map(article => {
-                        return <ArticleCard {...article} key={article.article_id}/>
-                    })}
-                </li>
-            </ul>
-        )
+            <main className="main">
+              <h3>{listTitle}</h3>
+              <ul>
+                  {articles.map(article => {
+                      return <ArticleCard {...article} key={article.article_id}/>
+                  })}
+              </ul>
+            </main>
+      )
     }
 }
 
