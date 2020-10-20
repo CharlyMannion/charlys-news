@@ -2,7 +2,9 @@ import React from 'react';
 
 const ArticleCard = (props) => {
     return (
-        <section>{props.title}</section>
+        <div className="articleCard">
+         <section>{props.title}</section>
+        </div>
     )
 }
 

@@ -2,20 +2,36 @@
     text-align: center;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.aside {
+    border: 2px solid yellow;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.nav {
+    border: 2px solid blue;
 }
 
-.App-header {
+.main {
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.articleCard {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+    width: 60vh;
+}
+
+.header {
+    /* grid-area: header; */
     background-color: #282c34;
-    min-height: 50vh;
+    min-height: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,15 +40,58 @@
     color: white;
 }
 
-.App-link {
-    color: #61dafb;
+.footer {
+    /* grid-area: footer; */
+    background-color: #282c34;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
+
+/* 
+@media only screen and (min-width: 600px) {
+    .App {
+        display: grid;
+        grid-template-columns: 100px auto;
+        grid-template-rows: 100px 200px auto;
+        grid-template-areas: "header header" "aside search" "asid main";
     }
-    to {
-        transform: rotate(360deg);
+    .aside {
+        grid-area: aside;
     }
-}
+    .nav {
+        grid-area: search;
+    }
+    .main {
+        grid-area: main;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .header {
+        grid-area: header;
+        background-color: #282c34;
+        min-height: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        color: white;
+    }
+    .footer {
+        grid-area: footer;
+        background-color: #282c34;
+        min-height: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        color: white;
+    }
+} */

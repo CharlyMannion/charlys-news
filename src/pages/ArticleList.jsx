@@ -31,7 +31,7 @@ class ArticleList extends Component {
         const {articles, isLoading} = this.state
         if (isLoading) return <Loader/>
         return (
-            <main>
+            <main className="main">
                 {articles.map(article => {
                 return <ArticleCard {...article} key={article.article_id}/>
                     // return <section key={article.article_id}>{article.title}</section>
