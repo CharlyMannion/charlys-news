@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import Loader from '../components/Loader';
 import {getArticleByID} from '../api';
-
-const trimDate = (dateStr) => {
-    const trimmedDate = dateStr.substring(0, 10);
-    return trimmedDate;
-}
+const {trimDate} = require('../utils')
 
 class SingleArticle extends Component {
     state = {
