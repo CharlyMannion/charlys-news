@@ -46,4 +46,4 @@ Northcoders News has articles which are divided into topics. Each article has us
 
 
 ### Component Diagram
-![Screenshot 2020-10-20 at 11 19 24](https://user-images.githubusercontent.com/28218869/96573510-25af4480-12c6-11eb-84f5-551065930403.png)
+![Screenshot 2020-10-20 at 11 44 43](https://user-images.githubusercontent.com/28218869/96576192-bb989e80-12c9-11eb-9467-e46c1d714b85.png)
