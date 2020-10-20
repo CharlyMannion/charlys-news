@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Loader from '../components/Loader';
-import axios from 'axios';
+import {getArticleByID} from '../api';
 
 const trimDate = (dateStr) => {
     const trimmedDate = dateStr.substring(0, 10);
@@ -14,7 +14,7 @@ class SingleArticle extends Component {
     }
 
     componentDidMount() {
-        axios.get(`https://fe-nc-news-api.herokuapp.com/api/articles/${this.props.article_id}`)
+        getArticleByID(this.props.article_id)
         .then(({data}) => {
             this.setState({article_info: data.article, isLoading: false});
         })
