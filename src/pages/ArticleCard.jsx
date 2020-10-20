@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from '@reach/router';
+
 
 const ArticleCard = (props) => {
     return (
-        <div className="articleCard">
-         <section>{props.title}</section>
-        </div>
+        <Link to={`/article/${props.article_id}`}>
+         <section className="articleCard">{props.title}</section>
+        </Link>
     )
 }
 
