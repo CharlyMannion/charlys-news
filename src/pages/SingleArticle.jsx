@@ -22,7 +22,7 @@ class SingleArticle extends Component {
         if (isLoading) return <Loader/>
         return (
             <main className="single-page-article">
-            <h3>{article_info.topic}</h3>
+            <h3>Topic: {article_info.topic}</h3>
             <h2>{article_info.title}</h2>
             <h3>Author: {article_info.author}</h3>
             <h3>Published: {trimDate(article_info.created_at)}</h3>
