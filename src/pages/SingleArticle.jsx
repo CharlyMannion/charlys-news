@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import ErrorDisplay from '../components/ErrorDisplay';
 import Loader from '../components/Loader';
 import {getArticleByID} from '../api';
-const {trimDate} = require('../utils')
+const {trimDate} = require('../utils');
 
 class SingleArticle extends Component {
     state = {
@@ -14,11 +15,21 @@ class SingleArticle extends Component {
         .then(({data}) => {
             this.setState({article_info: data.article, isLoading: false});
         })
+        .catch(({response}) => {
+            this.setState({
+                error: {
+                    status: response.status,
+                    message: response.data.msg,
+                }
+            })
+        })
     }
 
     render() {
-        const {article_info, isLoading} = this.state
-        console.log(article_info, "ARTICLE INFO")
+        const {article_info, isLoading, error} = this.state;
+        if (error) return (
+            <ErrorDisplay {...error}/>
+        )
         if (isLoading) return <Loader/>
         return (
             <main className="single-page-article">
