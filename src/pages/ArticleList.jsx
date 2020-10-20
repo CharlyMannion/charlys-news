@@ -28,13 +28,17 @@ class ArticleList extends Component {
     }
 
     render() {
+        const {slug} = this.props;
+        const listTitle = slug || "All";
+
         const {articles, isLoading} = this.state
         if (isLoading) return <Loader/>
+
         return (
             <main className="main">
+                <h3>{listTitle}</h3>
                 {articles.map(article => {
-                return <ArticleCard {...article} key={article.article_id}/>
-                    // return <section key={article.article_id}>{article.title}</section>
+                    return <ArticleCard {...article} key={article.article_id}/>
                 })}
             </main>
         )
