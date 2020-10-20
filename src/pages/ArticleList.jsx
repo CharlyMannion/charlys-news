@@ -38,7 +38,13 @@ class ArticleList extends Component {
             <main className="main">
                 <h3>{listTitle}</h3>
                 {articles.map(article => {
-                    return <ArticleCard {...article} key={article.article_id}/>
+                    return (
+                    <ul>
+                        <li>
+                            <ArticleCard {...article} key={article.article_id}/>
+                        </li>
+                    </ul>
+                    )
                 })}
             </main>
         )
