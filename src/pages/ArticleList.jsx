@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Loader from '../components/Loader';
+// import ArticlePoster from '../pages/ArticlePoster';
+import {Link} from '@reach/router';
 import ErrorDisplay from '../components/ErrorDisplay';
 import {getArticleByTopicSlug} from '../api';
 
@@ -15,7 +17,7 @@ class ArticleList extends Component {
     fetchArticles = () => {
         getArticleByTopicSlug('articles', this.props.slug)
         .then(({data: {articles}}) => {
-            this.setState({articles, isLoading: false})
+            this.setState({articles, isLoading: false, error: null})
         })
         .catch(({response}) => {
             this.setState({
@@ -48,6 +50,8 @@ class ArticleList extends Component {
 
         return (
             <main className="main">
+            {/* <ArticlePoster /> */}
+            <Link to="/add-article" key={'add-article'}><button>Add an Article</button></Link>
               <h3>{listTitle}</h3>
               <ul>
                   {articles.map(article => {

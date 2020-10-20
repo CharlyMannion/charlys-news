@@ -13,7 +13,7 @@ class NavBar extends Component {
     componentDidMount() {
         getRoute('topics')
         .then(({data: {topics}}) => {
-            this.setState({topics, isLoading: false})
+            this.setState({topics, isLoading: false, error: null})
         })
         .catch(({response}) => {
             this.setState({
@@ -31,13 +31,15 @@ class NavBar extends Component {
             <ErrorDisplay {...error}/>
         )
         if (isLoading) return <Loader/>
-        
+
         return (
             <div className="nav">
             <nav>
                 {topics.map(topic => {
                     return <Link to ={`/topics/${topic.slug}`} key={topic.slug}><button>{topic.slug}</button></Link>
                 })}
+                <br/>
+                <Link to="/add-article" key={'add-article'}><button>Add an Article</button></Link>
             </nav>
             </div>
         );

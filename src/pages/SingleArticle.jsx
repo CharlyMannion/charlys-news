@@ -13,7 +13,7 @@ class SingleArticle extends Component {
     componentDidMount() {
         getArticleByID(this.props.article_id)
         .then(({data}) => {
-            this.setState({article_info: data.article, isLoading: false});
+            this.setState({article_info: data.article, isLoading: false, error: null});
         })
         .catch(({response}) => {
             this.setState({
@@ -31,7 +31,7 @@ class SingleArticle extends Component {
             <ErrorDisplay {...error}/>
         )
         if (isLoading) return <Loader/>
-        
+
         return (
             <main className="single-page-article">
             <h3>Topic: {article_info.topic}</h3>
