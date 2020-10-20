@@ -8,3 +8,8 @@ export const getArticleByID = (article_id) => {
     return instance
         .get(`/articles/${article_id}`)
 }
+
+export const getRoute = (inp) => {
+    return instance
+        .get(`/${inp}`)
+}

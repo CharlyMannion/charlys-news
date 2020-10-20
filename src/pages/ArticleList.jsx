@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Loader from '../components/Loader';
-import axios from 'axios';
+import {getRoute} from '../api';
 import ArticleCard from '../pages/ArticleCard';
 
 class ArticleList extends Component {
@@ -10,9 +10,8 @@ class ArticleList extends Component {
     }
 
     fetchArticles = () => {
-        axios.get('https://fe-nc-news-api.herokuapp.com/api/articles', {params: {topic: this.props.slug}})
+        getRoute('articles')        
         .then(({data: {articles}}) => {
-            console.log(articles, "ARTICLES")
             this.setState({articles, isLoading: false})
         })
     }

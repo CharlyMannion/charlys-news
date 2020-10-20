@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import {Link} from '@reach/router';
+import {getRoute} from '../api';
 
 class NavBar extends Component {
     state = {
@@ -8,7 +8,7 @@ class NavBar extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://fe-nc-news-api.herokuapp.com/api/topics')
+        getRoute('topics')
         .then(({data: {topics}}) => {
             this.setState({topics})
         })
