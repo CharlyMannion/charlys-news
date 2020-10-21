@@ -30,6 +30,28 @@
     justify-content: center;
 }
 
+.commentList {
+    border: 2px solid yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.commentCard {
+    border: 2px solid pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 5vh;
+    width: 100vh;
+    background: white;
+    padding: 2rem 4rem;
+    margin: 1rem 0;
+    box-shadow: 2px 2px 5px 0px rgba(128, 128, 128, 0.308);
+}
+
 .articleCard {
     border: 2px solid pink;
     display: flex;

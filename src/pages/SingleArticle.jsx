@@ -43,6 +43,7 @@ class SingleArticle extends Component {
             <p>{article_info.body}</p>
             <p>Votes: {article_info.votes}</p>
             <p>Comment Count: {article_info.comment_count}</p>
+            <button>show/hide comments</button>
             <CommentList article_id={article_info.article_id}/>
             </main>
         )
