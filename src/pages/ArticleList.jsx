@@ -5,6 +5,8 @@ import {Link} from '@reach/router';
 import ErrorDisplay from '../components/ErrorDisplay';
 import {getArticleByTopicSlug} from '../api';
 import ArticleCard from '../pages/ArticleCard';
+import Sorter from '../components/Sorter';
+
 
 class ArticleList extends Component {
     state = {
@@ -13,7 +15,9 @@ class ArticleList extends Component {
     }
 
     fetchArticles = () => {
-        getArticleByTopicSlug('articles', this.props.slug)
+        const {sort_by} = this.state;
+        const {slug} = this.props;
+        getArticleByTopicSlug('articles', slug, sort_by)
         .then(({data: {articles}}) => {
             this.setState({articles, isLoading: false, error: null})
         })
@@ -32,9 +36,15 @@ class ArticleList extends Component {
     } 
 
     componentDidUpdate(prevProps, prevState) {
-        if(prevProps.slug !== this.props.slug) {
+        const {sort_by} = this.state;
+        const {slug} = this.props;
+        if(prevProps.slug !== slug || prevState.sort_by !== sort_by) {
             this.fetchArticles();
         }
+    }
+
+    addSort = (val) => {
+        this.setState({sort_by: val});
     }
 
     render() {
@@ -48,6 +58,7 @@ class ArticleList extends Component {
 
         return (
             <main className="main">
+                <Sorter addSort={this.addSort} />
             {/* <ArticlePoster /> */}
             <Link to="/add-article" key={'add-article'}><button>Add an Article</button></Link>
               <h3>{listTitle}</h3>

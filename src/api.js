@@ -19,9 +19,9 @@ export const getRoute = (inp) => {
         .get(`/${inp}`)
 }
 
-export const getArticleByTopicSlug = (inp, slug) => {
+export const getArticleByTopicSlug = (inp, slug, sort_by) => {
     return instance
-        .get(`${inp}`, { params: { topic: slug } })
+        .get(`${inp}`, { params: { topic: slug, sort_by } })
 }
 
 export const increaseArticleVotesByValue = (article_id, val) => {
