@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ErrorDisplay from '../components/ErrorDisplay';
 import Loader from '../components/Loader';
 import {getArticleByID} from '../api';
+import CommentList from '../components/CommentList';
 const {trimDate} = require('../utils');
 
 class SingleArticle extends Component {
@@ -13,6 +14,7 @@ class SingleArticle extends Component {
     componentDidMount() {
         getArticleByID(this.props.article_id)
         .then(({data}) => {
+            console.log(data, "DATA")
             this.setState({article_info: data.article, isLoading: false, error: null});
         })
         .catch(({response}) => {
@@ -41,8 +43,7 @@ class SingleArticle extends Component {
             <p>{article_info.body}</p>
             <p>Votes: {article_info.votes}</p>
             <p>Comment Count: {article_info.comment_count}</p>
-            {/* ADD COMMENT LIST HERE */}
-            {/* <CommentList article_id={article_info.article_id}/> */}
+            <CommentList article_id={article_info.article_id}/>
             </main>
         )
     }

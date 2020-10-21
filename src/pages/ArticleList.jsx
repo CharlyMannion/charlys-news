@@ -4,8 +4,6 @@ import Loader from '../components/Loader';
 import {Link} from '@reach/router';
 import ErrorDisplay from '../components/ErrorDisplay';
 import {getArticleByTopicSlug} from '../api';
-
-// import axios from 'axios';
 import ArticleCard from '../pages/ArticleCard';
 
 class ArticleList extends Component {
