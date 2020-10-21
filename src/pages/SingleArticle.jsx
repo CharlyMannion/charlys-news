@@ -9,6 +9,15 @@ class SingleArticle extends Component {
     state = {
         article_info: {},
         isLoading: true,
+        showComments: false,
+    }
+
+    toggleComments = () => {
+        this.setState((previousState) => {
+            return {
+                showComments: !previousState.showComments
+            }
+        })
     }
 
     componentDidMount() {
@@ -43,8 +52,8 @@ class SingleArticle extends Component {
             <p>{article_info.body}</p>
             <p>Votes: {article_info.votes}</p>
             <p>Comment Count: {article_info.comment_count}</p>
-            <button>show/hide comments</button>
-            <CommentList article_id={article_info.article_id}/>
+            <button onClick={this.toggleComments}>show/hide comments</button>
+            <CommentList showComments={this.state.showComments} article_id={article_info.article_id}/>
             </main>
         )
     }

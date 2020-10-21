@@ -35,8 +35,9 @@ class CommentList extends Component {
         if (isLoading) return <Loader/>
 
         return (
+            this.props.showComments &&
             <div className="commentList">
-                <h3>Comments</h3>
+                <h2>Comments:</h2>
                 <ul>
                     {comments.map(comment => {
                       return <CommentCard {...comment} key={comment.comment_id}/>
