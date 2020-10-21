@@ -3,6 +3,7 @@ import ErrorDisplay from '../components/ErrorDisplay';
 import Loader from '../components/Loader';
 import {getArticleByID} from '../api';
 import CommentList from '../components/CommentList';
+import VoteAdder from '../components/VoteAdder';
 const {trimDate} = require('../utils');
 
 class SingleArticle extends Component {
@@ -50,7 +51,8 @@ class SingleArticle extends Component {
             <h3>Author: {article_info.author}</h3>
             <h3>Published: {trimDate(article_info.created_at)}</h3>
             <p>{article_info.body}</p>
-            <p>Votes: {article_info.votes}</p>
+            {/* <p>Votes: {article_info.votes}</p> */}
+            <VoteAdder votes={article_info.votes} article_id={article_info.article_id} /> 
             <p>Comment Count: {article_info.comment_count}</p>
             <button onClick={this.toggleComments}>show/hide comments</button>
             <CommentList showComments={this.state.showComments} article_id={article_info.article_id}/>

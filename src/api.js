@@ -4,6 +4,11 @@ const instance = axios.create({
     baseURL: 'https://fe-nc-news-api.herokuapp.com/api'
 })
 
+export const increaseVotesByValue = (article_id, val) => {
+    return instance
+        .patch(`/articles/${article_id}`, { inc_votes: val })
+}
+
 export const getArticleComments = (article_id) => {
     return instance
         .get(`/articles/${article_id}/comments`)

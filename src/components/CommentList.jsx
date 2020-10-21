@@ -3,7 +3,6 @@ import Loader from '../components/Loader';
 import {getArticleComments} from '../api';
 import CommentCard from '../components/CommentCard'
 // import ArticlePoster from '../pages/ArticlePoster';
-// import {Link} from '@reach/router';
 import ErrorDisplay from '../components/ErrorDisplay';
 
 class CommentList extends Component {
