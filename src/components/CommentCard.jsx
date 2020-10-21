@@ -1,10 +1,16 @@
 import React from 'react';
-// import { Link } from '@reach/router';
-
+import VoteAdder from '../components/VoteAdder';
 
 const CommentCard = (props) => {
     return (
-         <section className="commentCard">{props.body}</section>
+         <section className="commentCard">
+             <p>{props.author}:</p>
+             <p>{props.body}</p>
+             <p>
+                votes:
+                <VoteAdder votes={props.votes} comment_id={props.comment_id} /> 
+             </p>
+             </section>
     )
 }
 

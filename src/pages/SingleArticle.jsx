@@ -20,7 +20,7 @@ class SingleArticle extends Component {
             }
         })
     }
-
+    
     componentDidMount() {
         getArticleByID(this.props.article_id)
         .then(({data}) => {

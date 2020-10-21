@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {increaseVotesByValue} from '../api';
+import {increaseArticleVotesByValue, increaseCommentVotesByValue} from '../api';
 
 class VoteAdder extends Component {
     state = {
@@ -11,13 +11,23 @@ class VoteAdder extends Component {
             return { userVoteCount: currentState.userVoteCount + voteValue};
         });
 
-        const {article_id} = this.props;
-        increaseVotesByValue(article_id, voteValue)
-        .catch(() => {
-            this.setState((currentState) => {
-                return { userVoteCount: currentState.userVoteCount - voteValue}
+        const {article_id, comment_id} = this.props;
+        if(article_id) {
+            increaseArticleVotesByValue(article_id, voteValue)
+            .catch(() => {
+                this.setState((currentState) => {
+                    return { userVoteCount: currentState.userVoteCount - voteValue}
+                })
             })
-        })
+        }
+        if(comment_id) {
+            increaseCommentVotesByValue(comment_id, voteValue)
+            .catch(() => {
+                this.setState((currentState) => {
+                    return { userVoteCount: currentState.userVoteCount - voteValue}
+                })
+            })
+        }
     }
 
     render () {
