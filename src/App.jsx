@@ -12,12 +12,7 @@ import UserDisplayer from './pages/UserDisplayer';
 
 class App extends Component {
     state = {
-        loggedInUser: '',
         user: {},
-    }
-
-    loginUser = (author) => {
-        this.setState({loggedInUser: author})
     }
 
     setFullUser = (inpUser) => {
@@ -27,9 +22,9 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-               <Header loggedInUser={this.state.loggedInUser} usersName={this.state.user.name} />
+               <Header loggedInUser={this.state.user.username} usersName={this.state.user.name} />
                <NavBar />
-               <LoginSetter loginUser={this.loginUser} setFullUser={this.setFullUser}/>
+               <LoginSetter setFullUser={this.setFullUser}/>
                <UserDisplayer user={this.state.user}/>
                <Router>
                    <ArticleList path="/" />

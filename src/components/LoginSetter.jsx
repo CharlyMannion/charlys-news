@@ -10,9 +10,6 @@ class LoginSetter extends Component {
     handleChange = (ev) => {
         const {setFullUser} = this.props
         const {value} = ev.target;
-        console.log(value, "VALUE")
-        const {loginUser} = this.props;
-        loginUser(value);
         getUserByUsername(value).then((res) => {
             const foundUser = res.data.user
             this.setState({author: foundUser});
