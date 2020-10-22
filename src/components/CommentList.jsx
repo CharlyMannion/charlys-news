@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Loader from '../components/Loader';
-import {getArticleComments} from '../api';
+import {getArticleComments, deleteCommentById} from '../api';
 import CommentCard from '../components/CommentCard'
 import CommentPoster from '../components/CommentPoster';
 // import ArticlePoster from '../pages/ArticlePoster';
@@ -32,6 +32,24 @@ class CommentList extends Component {
             comments: [newComment, ...currentState.comments]
             })
         )
+    };
+
+    deleteComment = (comment_id) => {
+        deleteCommentById(comment_id)
+        .then(() => {
+            this.setState((prevState) => {
+                console.log(prevState)
+                // comments: [...prevState].filter(elem => elem.comment_id === comment_id)
+            })
+        })
+        // .catch(({response}) => {
+        //     this.setState({
+        //         error: {
+        //             status: response.status,
+        //             message: response.data.msg,
+        //         }
+        //     })
+        // })
     }
 
     render () {
@@ -49,7 +67,14 @@ class CommentList extends Component {
                 <ul>
                     {comments.map(comment => {
                       return (
-                        <CommentCard {...comment} key={comment.comment_id}/>
+                          <div>
+                            <CommentCard {...comment} key={comment.comment_id}/>
+                            <button
+                            onClick={() => this.deleteComment(comment.comment_id)}
+                            >
+                                Delete Comment
+                            </button>
+                          </div>
                       )
                     })}
                 </ul>

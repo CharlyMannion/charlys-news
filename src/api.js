@@ -41,3 +41,8 @@ export const postComment = (article_id, body, username) => {
             username,
         })
 }
+
+export const deleteCommentById = (comment_id) => {
+    return instance
+        .delete(`/comments/${comment_id}`)
+}

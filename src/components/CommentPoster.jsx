@@ -5,6 +5,7 @@ class CommentPoster extends Component {
     state = {
         body: '',
         author: 'cooljmessy',
+        votes: 0,
     }
 
     handleChange = (ev) => {
@@ -14,11 +15,11 @@ class CommentPoster extends Component {
 
     handleSubmit = (ev) => {
         const {article_id, addComment} = this.props;
-        const {body, author} = this.state;
+        const {body, author, votes} = this.state;
         ev.preventDefault();
         postComment(article_id, body, author).then((res) => {
             const comment_id = res.data.comment.comment_id
-            const newComment = {comment_id, body, author}
+            const newComment = {comment_id, body, author, votes}
             addComment(newComment);
             this.setState({body: ''});
         })

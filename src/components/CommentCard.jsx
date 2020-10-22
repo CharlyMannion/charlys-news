@@ -7,7 +7,6 @@ const CommentCard = (props) => {
              <p>{props.author}:</p>
              <p>{props.body}</p>
              <p>
-                votes:
                 <VoteAdder votes={props.votes} comment_id={props.comment_id} /> 
              </p>
              </section>
