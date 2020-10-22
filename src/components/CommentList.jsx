@@ -3,6 +3,7 @@ import Loader from '../components/Loader';
 import {getArticleComments, deleteCommentById} from '../../src/utils/api';
 import CommentCard from '../components/CommentCard'
 import CommentPoster from '../components/CommentPoster';
+import {loggedInUserName} from '../utils/constants'
 // import ArticlePoster from '../pages/ArticlePoster';
 import ErrorDisplay from '../components/ErrorDisplay';
 
@@ -70,6 +71,7 @@ class CommentList extends Component {
                           <div>
                             <CommentCard {...comment} key={comment.comment_id}/>
                             <button
+                            disabled={comment.author !== loggedInUserName}
                             onClick={() => this.deleteComment(comment.comment_id)}
                             >
                                 Delete Comment

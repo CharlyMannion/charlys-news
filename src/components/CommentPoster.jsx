@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {postComment} from '../utils/api';
+import {loggedInUserName} from '../utils/constants'
 
 class CommentPoster extends Component {
     state = {
         body: '',
-        author: 'cooljmessy',
+        author: loggedInUserName,
         votes: 0,
     }
 
