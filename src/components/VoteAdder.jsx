@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {increaseArticleVotesByValue, increaseCommentVotesByValue} from '../api';
+import {increaseArticleVotesByValue, increaseCommentVotesByValue} from '../utils/api';
 
 class VoteAdder extends Component {
     state = {

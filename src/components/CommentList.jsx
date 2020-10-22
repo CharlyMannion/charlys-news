@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Loader from '../components/Loader';
-import {getArticleComments, deleteCommentById} from '../api';
+import {getArticleComments, deleteCommentById} from '../../src/utils/api';
 import CommentCard from '../components/CommentCard'
 import CommentPoster from '../components/CommentPoster';
 // import ArticlePoster from '../pages/ArticlePoster';

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from '@reach/router';
 import Loader from '../components/Loader';
 import ErrorDisplay from '../components/ErrorDisplay';
-import {getRoute} from '../api';
+import {getRoute} from '../utils/api';
 
 class NavBar extends Component {
     state = {

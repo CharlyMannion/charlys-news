@@ -3,7 +3,7 @@ import Loader from '../components/Loader';
 // import ArticlePoster from '../pages/ArticlePoster';
 import {Link} from '@reach/router';
 import ErrorDisplay from '../components/ErrorDisplay';
-import {getArticleByTopicSlug} from '../api';
+import {getArticleByTopicSlug} from '../../src/utils/api';
 import ArticleCard from '../components/ArticleCard';
 import Sorter from '../components/Sorter';
 

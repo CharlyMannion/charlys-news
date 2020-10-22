@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {postComment} from '../api';
+import {postComment} from '../utils/api';
 
 class CommentPoster extends Component {
     state = {

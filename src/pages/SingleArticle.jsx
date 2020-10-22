@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import ErrorDisplay from '../components/ErrorDisplay';
 import Loader from '../components/Loader';
-import {getArticleByID} from '../api';
+import {getArticleByID} from '../../src/utils/api';
 import CommentList from '../components/CommentList';
 import VoteAdder from '../components/VoteAdder';
-const {trimDate} = require('../utils');
+const {trimDate} = require('../../src/utils/utils');
 
 class SingleArticle extends Component {
     state = {
