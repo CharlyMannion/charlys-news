@@ -8,7 +8,7 @@ import ArticleList from './pages/ArticleList';
 import SingleArticle from './pages/SingleArticle'
 import ErrorDisplay from './components/ErrorDisplay';
 import LoginSetter from './components/LoginSetter';
-import UserDisplayer from './pages/UserDisplayer';
+import UserDisplayer from './components/UserDisplayer';
 
 class App extends Component {
     state = {
