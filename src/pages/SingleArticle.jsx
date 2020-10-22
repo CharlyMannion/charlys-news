@@ -54,7 +54,7 @@ class SingleArticle extends Component {
             <VoteAdder votes={article_info.votes} article_id={article_info.article_id} /> 
             <p>Comment Count: {article_info.comment_count}</p>
             <button onClick={this.toggleComments}>show/hide comments</button>
-            <CommentList showComments={this.state.showComments} article_id={article_info.article_id}/>
+            <CommentList showComments={this.state.showComments} article_id={article_info.article_id} loggedInUser={this.props.loggedInUser} />
             </main>
         )
     }

@@ -1,12 +1,11 @@
 import React from 'react';
 import {Link} from '@reach/router';
-import {loggedInUserName} from '../utils/constants'
 
-const Header = () => {
+const Header = (props) => {
     return (
     <header className="header">
         <Link to='/'><h1>Northcoders News</h1></Link>
-        <h3>Welcome {loggedInUserName}</h3>
+        <h3>Welcome {props.loggedInUser}</h3>
     </header>
     )
 }

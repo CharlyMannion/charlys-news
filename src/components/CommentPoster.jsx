@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import {postComment} from '../utils/api';
-import {loggedInUserName} from '../utils/constants'
 
 class CommentPoster extends Component {
     state = {
         body: '',
-        author: loggedInUserName,
         votes: 0,
     }
 
@@ -15,12 +13,12 @@ class CommentPoster extends Component {
     }
 
     handleSubmit = (ev) => {
-        const {article_id, addComment} = this.props;
-        const {body, author, votes} = this.state;
+        const {article_id, addComment, loggedInUser} = this.props;
+        const {body, votes} = this.state;
         ev.preventDefault();
-        postComment(article_id, body, author).then((res) => {
+        postComment(article_id, body, loggedInUser).then((res) => {
             const comment_id = res.data.comment.comment_id
-            const newComment = {comment_id, body, author, votes}
+            const newComment = {comment_id, body, loggedInUser, votes}
             addComment(newComment);
             this.setState({body: ''});
         })
