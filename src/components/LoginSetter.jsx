@@ -7,26 +7,26 @@ class LoginSetter extends Component {
 
     handleChange = (ev) => {
         const {value} = ev.target;
-        this.setState({author: value, error: null});
-    }
-
-    handleSubmit = (ev) => {
+        console.log(value, "VALUE")
+        this.setState({author: value});
         const {loginUser} = this.props;
-        const {author} = this.state;
-        ev.preventDefault();
-        loginUser(author);
-        this.setState({author: ''});
+        loginUser(value);
     }
 
     render() {
-        const {author} = this.state;
         return (
-            <form onSubmit={this.handleSubmit}> 
-                <label>
-                    <input onChange={this.handleChange} name="body" type="text" value={author} required />
-                </label>
-                <input type="submit" value="Login" />
-            </form>
+            <label htmlFor='user-drop-down'>
+                Choose User:
+                <select id="soruser-drop-downter" required onChange={this.handleChange}>
+                    <option value="">select an option</option>
+                    <option value="cooljmessy" onChange={this.handleChange}>cooljmessy</option>
+                    <option value="tickle122" onChange={this.handleChange}>tickle122</option>
+                    <option value="grumpy19" onChange={this.handleChange}>grumpy19</option>
+                    <option value="jessjelly" onChange={this.handleChange}>jessjelly</option>
+                    <option value="happyamy2016" onChange={this.handleChange}>happyamy2016</option>
+                    <option value="weegembump" onChange={this.handleChange}>weegembump</option>
+                </select>
+            </label>
         )
     }
 }
