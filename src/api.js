@@ -33,3 +33,11 @@ export const increaseCommentVotesByValue = (comment_id, val) => {
     return instance
         .patch(`/comments/${comment_id}`, { inc_votes: val })
 }
+
+export const postComment = (article_id, body, username) => {
+    return instance
+        .post(`articles/${article_id}/comments`, {
+            body,
+            username,
+        })
+}

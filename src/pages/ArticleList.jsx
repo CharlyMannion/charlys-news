@@ -4,7 +4,7 @@ import Loader from '../components/Loader';
 import {Link} from '@reach/router';
 import ErrorDisplay from '../components/ErrorDisplay';
 import {getArticleByTopicSlug} from '../api';
-import ArticleCard from '../pages/ArticleCard';
+import ArticleCard from '../components/ArticleCard';
 import Sorter from '../components/Sorter';
 
 
