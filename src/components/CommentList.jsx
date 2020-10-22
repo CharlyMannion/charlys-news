@@ -39,17 +39,17 @@ class CommentList extends Component {
         .then(() => {
             this.setState((prevState) => {
                 console.log(prevState)
-                // comments: [...prevState].filter(elem => elem.comment_id === comment_id)
+                return {comments: [...prevState.comments].filter(elem => elem.comment_id !== comment_id)}
             })
         })
-        // .catch(({response}) => {
-        //     this.setState({
-        //         error: {
-        //             status: response.status,
-        //             message: response.data.msg,
-        //         }
-        //     })
-        // })
+        .catch(({response}) => {
+            this.setState({
+                error: {
+                    status: response.status,
+                    message: response.data.msg,
+                }
+            })
+        })
     }
 
     render () {
