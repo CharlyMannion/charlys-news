@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {postComment} from '../utils/api';
+import ErrorDisplay from '../components/ErrorDisplay';
 
 class CommentPoster extends Component {
     state = {
@@ -15,7 +16,6 @@ class CommentPoster extends Component {
     handleSubmit = (ev) => {
         const {article_id, addComment, author} = this.props;
         const {body, votes} = this.state;
-        console.log(author, "LOGGED IN USER")
         ev.preventDefault();
         postComment(article_id, body, author).then((res) => {
             const comment_id = res.data.comment.comment_id
@@ -34,7 +34,10 @@ class CommentPoster extends Component {
     }
 
     render() {
-        const {body} = this.state;
+        const {body, error} = this.state;
+        if (error) return (
+            <ErrorDisplay {...error}/>
+        )
         return (
             <form onSubmit={this.handleSubmit}> 
                 <label>
