@@ -27,6 +27,13 @@ class CommentList extends Component {
         })
     }
 
+    addComment = (newComment) => {
+        this.setState((currentState) => ({
+            comments: [newComment, ...currentState.comments]
+            })
+        )
+    }
+
     render () {
         const {comments, isLoading, error} =  this.state;
         if (error) return (
@@ -37,7 +44,7 @@ class CommentList extends Component {
         return (
             this.props.showComments &&
             <div className="commentList">
-            <CommentPoster article_id={this.props.article_id}/>
+            <CommentPoster article_id={this.props.article_id} addComment={this.addComment}/>
                 <h2>Comments:</h2>
                 <ul>
                     {comments.map(comment => {

@@ -4,7 +4,7 @@ import {postComment} from '../api';
 class CommentPoster extends Component {
     state = {
         body: '',
-        responsible: 'cooljmessy',
+        author: 'cooljmessy',
     }
 
     handleChange = (ev) => {
@@ -13,11 +13,13 @@ class CommentPoster extends Component {
     }
 
     handleSubmit = (ev) => {
-        const {article_id} = this.props;
-        const {body, responsible} = this.state;
+        const {article_id, addComment} = this.props;
+        const {body, author} = this.state;
         ev.preventDefault();
-        postComment(article_id, body, responsible).then(() => {
-            // addComment();
+        postComment(article_id, body, author).then((res) => {
+            const comment_id = res.data.comment.comment_id
+            const newComment = {comment_id, body, author}
+            addComment(newComment);
             this.setState({body: ''});
         })
         .catch(({response}) => {
