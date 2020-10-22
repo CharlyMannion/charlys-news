@@ -4,7 +4,7 @@ import Loader from '../components/Loader';
 import {getArticleByID} from '../api';
 import CommentList from '../components/CommentList';
 import VoteAdder from '../components/VoteAdder';
-import CommentPoster from '../components/CommentPoster';
+// import CommentPoster from '../components/CommentPoster';
 const {trimDate} = require('../utils');
 
 class SingleArticle extends Component {
@@ -66,8 +66,8 @@ class SingleArticle extends Component {
             <VoteAdder votes={article_info.votes} article_id={article_info.article_id} /> 
             <p>Comment Count: {article_info.comment_count}</p>
             <button onClick={this.toggleComments}>show/hide comments</button>
-            <CommentList showComments={this.state.showComments} article_id={article_info.article_id} newComment={this.state.newComment}/>
-            <CommentPoster article_id={article_info.article_id}/>
+            <CommentList showComments={this.state.showComments} article_id={article_info.article_id}/>
+            {/* <CommentPoster article_id={article_info.article_id}/> */}
             </main>
         )
     }

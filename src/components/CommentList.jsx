@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Loader from '../components/Loader';
 import {getArticleComments} from '../api';
 import CommentCard from '../components/CommentCard'
+import CommentPoster from '../components/CommentPoster';
 // import ArticlePoster from '../pages/ArticlePoster';
 import ErrorDisplay from '../components/ErrorDisplay';
 
@@ -36,6 +37,7 @@ class CommentList extends Component {
         return (
             this.props.showComments &&
             <div className="commentList">
+            <CommentPoster article_id={this.props.article_id}/>
                 <h2>Comments:</h2>
                 <ul>
                     {comments.map(comment => {
