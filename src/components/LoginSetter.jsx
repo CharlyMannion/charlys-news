@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {getUserByUsername} from '../utils/api';
+import ErrorDisplay from '../components/ErrorDisplay';
 
 class LoginSetter extends Component {
     state = {
@@ -6,14 +8,31 @@ class LoginSetter extends Component {
     }
 
     handleChange = (ev) => {
+        const {setFullUser} = this.props
         const {value} = ev.target;
         console.log(value, "VALUE")
-        this.setState({author: value});
         const {loginUser} = this.props;
         loginUser(value);
+        getUserByUsername(value).then((res) => {
+            const foundUser = res.data.user
+            this.setState({author: foundUser});
+            setFullUser(foundUser)
+        })
+        .catch(({response}) => {
+            this.setState({
+                error: {
+                    status: response.status,
+                    message: response.data.msg,
+                }
+            })
+        })
     }
 
     render() {
+        const {error} = this.state;
+        if (error) return (
+            <ErrorDisplay {...error}/>
+        )
         return (
             <label htmlFor='user-drop-down'>
                 Choose User:

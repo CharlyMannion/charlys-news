@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Loader from '../components/Loader';
-// import ArticlePoster from '../pages/ArticlePoster';
-import {Link} from '@reach/router';
 import ErrorDisplay from '../components/ErrorDisplay';
 import {getArticleByTopicSlug} from '../../src/utils/api';
 import ArticleCard from '../components/ArticleCard';
@@ -59,8 +57,6 @@ class ArticleList extends Component {
         return (
             <main className="main">
                 <Sorter addSort={this.addSort} />
-            {/* <ArticlePoster /> */}
-            <Link to="/add-article" key={'add-article'}><button>Add an Article</button></Link>
               <h3>{listTitle}</h3>
               <ul>
                   {articles.map(article => {

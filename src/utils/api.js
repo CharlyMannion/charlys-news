@@ -46,3 +46,8 @@ export const deleteCommentById = (comment_id) => {
     return instance
         .delete(`/comments/${comment_id}`)
 }
+
+export const getUserByUsername = (username) => {
+    return instance
+        .get(`/users/${username}`)
+}

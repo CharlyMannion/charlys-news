@@ -7,29 +7,34 @@ import NavBar from './components/NavBar';
 import ArticleList from './pages/ArticleList';
 import SingleArticle from './pages/SingleArticle'
 import ErrorDisplay from './components/ErrorDisplay';
-import ArticlePoster from './pages/ArticlePoster';
 import LoginSetter from './components/LoginSetter';
+import UserDisplayer from './pages/UserDisplayer';
 
 class App extends Component {
     state = {
         loggedInUser: '',
+        user: {},
     }
 
     loginUser = (author) => {
         this.setState({loggedInUser: author})
     }
 
+    setFullUser = (inpUser) => {
+        this.setState({user: inpUser})
+    }
+
     render() {
         return (
             <div className="App">
-               <Header loggedInUser={this.state.loggedInUser}/>
+               <Header loggedInUser={this.state.loggedInUser} usersName={this.state.user.name} />
                <NavBar />
-               <LoginSetter loginUser={this.loginUser}/>
+               <LoginSetter loginUser={this.loginUser} setFullUser={this.setFullUser}/>
+               <UserDisplayer user={this.state.user}/>
                <Router>
                    <ArticleList path="/" />
                    <ArticleList path="/topics/:slug" />
                    <SingleArticle path="/article/:article_id" loggedInUser={this.state.loggedInUser}/>
-                   <ArticlePoster path="/add-article" />
                    <ErrorDisplay default status={404} message="This page does not exist"/>
                </Router>
                <Footer />
