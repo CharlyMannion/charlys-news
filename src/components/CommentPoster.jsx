@@ -13,12 +13,13 @@ class CommentPoster extends Component {
     }
 
     handleSubmit = (ev) => {
-        const {article_id, addComment, loggedInUser} = this.props;
+        const {article_id, addComment, author} = this.props;
         const {body, votes} = this.state;
+        console.log(author, "LOGGED IN USER")
         ev.preventDefault();
-        postComment(article_id, body, loggedInUser).then((res) => {
+        postComment(article_id, body, author).then((res) => {
             const comment_id = res.data.comment.comment_id
-            const newComment = {comment_id, body, loggedInUser, votes}
+            const newComment = {comment_id, body, author, votes}
             addComment(newComment);
             this.setState({body: ''});
         })
