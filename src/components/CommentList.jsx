@@ -39,7 +39,9 @@ class CommentList extends Component {
                 <h2>Comments:</h2>
                 <ul>
                     {comments.map(comment => {
-                      return <CommentCard {...comment} key={comment.comment_id}/>
+                      return (
+                        <CommentCard {...comment} key={comment.comment_id}/>
+                      )
                     })}
                 </ul>
             </div>

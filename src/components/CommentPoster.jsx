@@ -9,7 +9,7 @@ class CommentPoster extends Component {
 
     handleChange = (ev) => {
         const {value} = ev.target;
-        this.setState({body: value});
+        this.setState({body: value, error: null});
     }
 
     handleSubmit = (ev) => {

@@ -12,6 +12,7 @@ class SingleArticle extends Component {
         article_info: {},
         isLoading: true,
         showComments: false,
+        commentAdded: false,
     }
 
     toggleComments = () => {
@@ -23,7 +24,12 @@ class SingleArticle extends Component {
     }
 
     // addComment = () => {
+    // set state to comment added true so page re-renders????
+    // }
 
+    // componentDidUpdate() {
+    //     if state has changes, call 
+    //     getArticleByID
     // }
 
     componentDidMount() {
@@ -60,7 +66,7 @@ class SingleArticle extends Component {
             <VoteAdder votes={article_info.votes} article_id={article_info.article_id} /> 
             <p>Comment Count: {article_info.comment_count}</p>
             <button onClick={this.toggleComments}>show/hide comments</button>
-            <CommentList showComments={this.state.showComments} article_id={article_info.article_id}/>
+            <CommentList showComments={this.state.showComments} article_id={article_info.article_id} newComment={this.state.newComment}/>
             <CommentPoster article_id={article_info.article_id}/>
             </main>
         )
