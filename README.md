@@ -2,7 +2,7 @@
 
 ## Description
 
-View the hosted project [here](https://github.com/CharlyMannion/northcoders-news)
+View the hosted project [here](https://charlys-news.netlify.app/)
 
 Northcoders News is a social news aggregation, web content rating, and discussion website. Think something along the lines of [Reddit](https://www.reddit.com/).
 
