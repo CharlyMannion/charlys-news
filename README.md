@@ -2,10 +2,11 @@
 
 ## Description
 
+View the hosted project [here](https://github.com/CharlyMannion/northcoders-news)
+
 Northcoders News is a social news aggregation, web content rating, and discussion website. Think something along the lines of [Reddit](https://www.reddit.com/).
 
 Northcoders News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they have added.
-
 
 ## User Stories
 
@@ -47,3 +48,20 @@ Northcoders News has articles which are divided into topics. Each article has us
 
 ### Component Diagram
 ![Screenshot 2020-10-21 at 16 34 44](https://user-images.githubusercontent.com/28218869/96742962-5fae4280-13bb-11eb-8ab3-a629d0e2643d.png)
+
+
+
+
+## Using this repo
+* fork [this](https://github.com/CharlyMannion/northcoders-news) github repo
+* clone the code `git clone https://github.com/CharlyMannion/northcoders-news`
+* To install the required packages run `npm install`
+* To see the locally hosted app, run `yarn start`
+
+
+
+
+## Back End
+
+* Find the back end repository [here](https://github.com/CharlyMannion/fe-nc-news-api)
+* Find the hosted back end [here](https://fe-nc-news-api.herokuapp.com/)
