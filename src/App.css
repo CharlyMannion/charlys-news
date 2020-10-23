@@ -57,15 +57,21 @@
 }
 
 .user-displayer {
-    background-color: (60, 60, 60, 1);
+    background-color: rgba(255, 55, 166, 1);
     min-height: 10vh;
-    width: 40vh;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     font-size: calc(10px + 2vmin);
     color: rgba(83, 107, 120, 1);
+    padding-bottom: 10vh;
+}
+
+.avatar {
+    height: 10vh;
+    width: auto;
 }
 
 .main {
@@ -166,10 +172,10 @@
 }
 
 @media only screen and (min-width: 600px) {
-    .user-displayer {
+    .main {
         width: 120vh;
     }
-    .main {
+    .sorter {
         width: 120vh;
     }
     .commentCard {

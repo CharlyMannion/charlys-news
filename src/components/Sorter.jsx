@@ -13,6 +13,7 @@ class Sorter extends Component {
 
     render() {
         return (
+
             <label htmlFor='sorter'>
                 Sort by:
                 <select className="select" id="sorter" required onChange={this.handleChange}>

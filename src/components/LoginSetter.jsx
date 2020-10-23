@@ -32,9 +32,8 @@ class LoginSetter extends Component {
         )
         return (
             <label className="user-displayer" htmlFor='user-drop-down'>
-                Choose User:
                 <select className="select" id="soruser-drop-downter" required onChange={this.handleChange}>
-                    <option value="">select an option</option>
+                    <option value="">select a character</option>
                     <option value="cooljmessy" onChange={this.handleChange}>cooljmessy</option>
                     <option value="tickle122" onChange={this.handleChange}>tickle122</option>
                     <option value="grumpy19" onChange={this.handleChange}>grumpy19</option>

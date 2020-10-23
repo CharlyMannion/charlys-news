@@ -56,7 +56,9 @@ class ArticleList extends Component {
 
         return (
             <main >
+                <div className= "sorter">
                 <Sorter addSort={this.addSort} />
+                </div>
               <h3>{listTitle}</h3>
               <ul>
                   {articles.map(article => {
