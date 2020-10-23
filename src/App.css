@@ -13,12 +13,13 @@
 }
 
 .select {
-    background: 'grey';
     font-size: 1em;
     margin: 1em;
     padding: 0.25em 1em;
-    border: 2px solid rgba(99, 112, 129, 1);
     border-radius: 3px;
+    border: 2px solid rgba(99, 112, 129, 1);
+    background: rgba(253, 247, 250, 1);
+    color: rgba(99, 112, 129, 1);
 }
 
 .commentForm {
@@ -28,14 +29,21 @@
     align-items: center;
     justify-content: center;
     padding-top: 2vh;
-    border: 4px solid rgba(241, 80, 37, 1);
+    /* border: 4px solid rgba(241, 80, 37, 1); */
     background-color: rgba(99, 112, 129, 1);
+}
+
+.commentVoteHolder {
+    background-color: rgba(99, 112, 129, 1);
+    width: 100%;
+    color: rgba(253, 247, 250, 1);
 }
 
 .voter {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    color: rgba(253, 247, 250, 1);
 }
 
 .header {
@@ -48,6 +56,7 @@
     font-size: calc(10px + 2vmin);
     color: rgba(253, 247, 250, 1);
     background-color: rgba(99, 112, 129, 1);
+    border: 4px solid rgba(253, 247, 250, 1);
 }
 
 .nav {
@@ -60,6 +69,7 @@
     font-size: calc(10px + 2vmin);
     color: rgba(253, 247, 250, 1);
     background-color: rgba(99, 112, 129, 1);
+    border: 4px solid rgba(253, 247, 250, 1);
 }
 
 .user-displayer {
@@ -93,8 +103,8 @@
     align-items: center;
     justify-content: center;
     min-height: 5vh;
-    width: 40vh;
-    margin: 1rem 0;
+    width: 100%;
+    padding: 0%;
 }
 
 .commentList {
@@ -102,10 +112,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 40vh;
-    margin: 1rem;
+    width: 100%;
+    padding: 0%;
     background-color: rgba(99, 112, 129, 1);
-    border: 4px solid rgba(241, 80, 37, 1);
+    border: 4px solid rgba(253, 247, 250, 1);
     color: rgba(253, 247, 250, 1);
 }
 
@@ -115,7 +125,7 @@
     align-items: left;
     justify-content: center;
     min-height: 10vh;
-    width: 40vh;
+    width: 60%;
     padding: 1rem 2rem;
     margin: 1rem;
     text-align: left;
@@ -134,14 +144,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 40vh;
-    margin: 1rem;
+    width: 100%;
+    /* margin: 1rem; */
     background-color: rgba(253, 247, 250, 1);
+    order: 4px solid rgba(253, 247, 250, 1);
+    color: rgba(253, 247, 250, 1);
+    background-color: rgba(99, 112, 129, 1);
 }
 
 .error-display {
-    padding: 1rem 2rem;
-    margin: 1rem;
     width: 40vh;
     color: red;
     font-weight: bold;
@@ -159,6 +170,7 @@
     font-size: calc(10px + 2vmin);
     color: white;
     background-color: rgba(99, 112, 129, 1);
+    border: 4px solid rgba(253, 247, 250, 1);
 }
 
 @media only screen and (min-width: 600px) {

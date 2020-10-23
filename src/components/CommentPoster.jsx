@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '../components/Button';
+import Button from '../styledComponents/Button';
 import {postComment} from '../utils/api';
 import ErrorDisplay from '../components/ErrorDisplay';
 

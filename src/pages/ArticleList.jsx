@@ -46,8 +46,6 @@ class ArticleList extends Component {
     }
 
     render() {
-        const {slug} = this.props;
-        const listTitle = slug || "All";
         const {articles, isLoading, error} = this.state
         if (error) return (
             <ErrorDisplay {...error}/>
@@ -59,7 +57,6 @@ class ArticleList extends Component {
                 <div className= "sorter">
                 <Sorter addSort={this.addSort} />
                 </div>
-              <h3>{listTitle}</h3>
               <ul>
                   {articles.map(article => {
                       return (

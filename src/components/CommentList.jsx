@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Button from '../components/Button';
+import Button from '../styledComponents/Button';
 import Loader from '../components/Loader';
 import {getArticleComments, deleteCommentById} from '../../src/utils/api';
 import CommentCard from '../components/CommentCard'
 import CommentPoster from '../components/CommentPoster';
-// import ArticlePoster from '../pages/ArticlePoster';
 import ErrorDisplay from '../components/ErrorDisplay';
 
 class CommentList extends Component {

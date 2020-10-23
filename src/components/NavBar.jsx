@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '../components/Button';
+import Button from '../styledComponents/Button';
 import {Link} from '@reach/router';
 import Loader from '../components/Loader';
 import ErrorDisplay from '../components/ErrorDisplay';
