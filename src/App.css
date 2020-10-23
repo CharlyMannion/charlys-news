@@ -1,11 +1,11 @@
 .App {
     text-align: center;
-    background-color: rgba(253, 247, 250, 1);
-    color: rgba(83, 107, 120, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgba(253, 247, 250, 1);
+    color: rgba(83, 107, 120, 1);
 }
 
 .unpaddedList {
@@ -27,11 +27,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0%;
+    padding-top: 2vh;
+    border: 4px solid rgba(241, 80, 37, 1);
+    background-color: rgba(99, 112, 129, 1);
+}
+
+.voter {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .header {
-    background-color: rgba(99, 112, 129, 1);
     min-height: 10vh;
     width: 100%;
     display: flex;
@@ -40,10 +47,10 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: rgba(253, 247, 250, 1);
+    background-color: rgba(99, 112, 129, 1);
 }
 
 .nav {
-    background-color: rgba(99, 112, 129, 1);
     min-height: 10vh;
     width: 100%;
     display: flex;
@@ -52,18 +59,19 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: rgba(253, 247, 250, 1);
+    background-color: rgba(99, 112, 129, 1);
 }
 
 .user-displayer {
-    background-color: rgba(255, 55, 166, 1);
     min-height: 10vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     font-size: calc(10px + 2vmin);
-    color: rgba(83, 107, 120, 1);
     padding-bottom: 10vh;
+    color: rgba(253, 247, 250, 1);
+    background-color: rgba(255, 55, 166, 1);
 }
 
 .avatar {
@@ -86,38 +94,34 @@
     justify-content: center;
     min-height: 5vh;
     width: 40vh;
-    background-color: (60, 60, 60, 1);
     margin: 1rem 0;
-    background-color: rgba(253, 247, 250, 1);
 }
 
 .commentList {
-    background-color: (60, 60, 60, 1);
-    border: 2px solid rgba(99, 112, 129, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 40vh;
-    background: white;
     margin: 1rem;
-    background-color: rgba(253, 247, 250, 1);
+    background-color: rgba(99, 112, 129, 1);
+    border: 4px solid rgba(241, 80, 37, 1);
+    color: rgba(253, 247, 250, 1);
 }
 
 .articleCard {
-    background-color: (60, 60, 60, 1);
-    border: 2px solid rgba(99, 112, 129, 1);
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: center;
     min-height: 10vh;
     width: 40vh;
-    background: white;
     padding: 1rem 2rem;
     margin: 1rem;
-    background-color: rgba(253, 247, 250, 1);
     text-align: left;
+    background-color: rgba(99, 112, 129, 1);
+    border: 4px solid rgba(241, 80, 37, 1);
+    color: rgba(253, 247, 250, 1);
 }
 
 .articleCard:hover {
@@ -131,23 +135,21 @@
     align-items: center;
     justify-content: center;
     width: 40vh;
-    background: white;
     margin: 1rem;
     background-color: rgba(253, 247, 250, 1);
 }
 
 .error-display {
+    padding: 1rem 2rem;
+    margin: 1rem;
+    width: 40vh;
     color: red;
     font-weight: bold;
     background: white;
     border: 2px dashed red;
-    padding: 1rem 2rem;
-    margin: 1rem;
-    width: 40vh;
 }
 
 .footer {
-    background-color: rgba(99, 112, 129, 1);
     min-height: 10vh;
     width: 100%;
     display: flex;
@@ -156,6 +158,7 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+    background-color: rgba(99, 112, 129, 1);
 }
 
 @media only screen and (min-width: 600px) {
@@ -166,6 +169,9 @@
         width: 120vh;
     }
     .commentCard {
+        width: 120vh;
+    }
+    .commentForm {
         width: 120vh;
     }
     .commentList {

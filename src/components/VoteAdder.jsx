@@ -35,13 +35,13 @@ class VoteAdder extends Component {
         const {votes} = this.props;
         const {userVoteCount} = this.state;
         return (
-            <div>
+            <div className="voter">
                 <Button 
                 disabled={userVoteCount === 1}
                 onClick={() => this.handleVote(1)} value={1}>
                     Vote Up
                 </Button>
-                <p>Votes: {votes + userVoteCount}</p>
+                <p>{votes + userVoteCount} votes</p>
                 <Button 
                 disabled={userVoteCount === -1}
                 onClick={() => this.handleVote(-1)} value={-1}>
