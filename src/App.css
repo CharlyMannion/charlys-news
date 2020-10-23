@@ -31,7 +31,6 @@
 }
 
 .header {
-    /* grid-area: header; */
     background-color: rgba(99, 112, 129, 1);
     min-height: 10vh;
     width: 100%;
@@ -44,7 +43,6 @@
 }
 
 .nav {
-    /* border: 2px solid blue; */
     background-color: rgba(99, 112, 129, 1);
     min-height: 10vh;
     width: 100%;
@@ -61,7 +59,6 @@
     min-height: 10vh;
     width: 100%;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: space-evenly;
     font-size: calc(10px + 2vmin);
@@ -75,7 +72,6 @@
 }
 
 .main {
-    /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,7 +80,6 @@
 }
 
 .commentCard {
-    /* border: 2px solid blue; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,9 +87,7 @@
     min-height: 5vh;
     width: 40vh;
     background-color: (60, 60, 60, 1);
-    /* padding: 1rem 2rem; */
     margin: 1rem 0;
-    /* box-shadow: 2px 2px 5px 0px rgba(128, 128, 128, 0.308); */
     background-color: rgba(253, 247, 250, 1);
 }
 
@@ -107,9 +100,7 @@
     justify-content: center;
     width: 40vh;
     background: white;
-    /* padding: 1rem 2rem; */
     margin: 1rem;
-    /* box-shadow: 2px 2px 5px 0px rgba(255, 55, 166, 1); */
     background-color: rgba(253, 247, 250, 1);
 }
 
@@ -125,7 +116,6 @@
     background: white;
     padding: 1rem 2rem;
     margin: 1rem;
-    /* box-shadow: 2px 2px 5px 0px rgba(128, 128, 128, 0.308); */
     background-color: rgba(253, 247, 250, 1);
     text-align: left;
 }
@@ -136,16 +126,13 @@
 }
 
 .single-page-article {
-    /* border: 2px solid rgba(99, 112, 129, 1); */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 40vh;
     background: white;
-    /* padding: 1rem 2rem; */
     margin: 1rem;
-    /* box-shadow: 2px 2px 5px 0px rgba(255, 55, 166, 1); */
     background-color: rgba(253, 247, 250, 1);
 }
 
