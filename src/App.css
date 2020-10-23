@@ -63,7 +63,7 @@
 }
 
 .user-displayer {
-    min-height: 10vh;
+    min-height: 5vh;
     width: 100%;
     display: flex;
     align-items: center;
