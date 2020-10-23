@@ -29,7 +29,7 @@ class App extends Component {
                <Router>
                    <ArticleList path="/" />
                    <ArticleList path="/topics/:slug" />
-                   <SingleArticle path="/article/:article_id" loggedInUser={this.state.loggedInUser}/>
+                   <SingleArticle path="/article/:article_id" loggedInUser={this.state.user.username}/>
                    <ErrorDisplay default status={404} message="This page does not exist"/>
                </Router>
                <Footer />

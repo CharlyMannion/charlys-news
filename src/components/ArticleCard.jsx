@@ -8,8 +8,9 @@ const ArticleCard = (props) => {
             <Link to={`/article/${props.article_id}`}>
                 <h3>{props.title}</h3>
             </Link>
-             <p>Votes: {props.votes}</p>
-             <p>Comments: {props.comment_count}</p>
+            <p>Topic: {props.topic}</p>
+            <p>Votes: {props.votes}</p>
+            <p>Comments: {props.comment_count}</p>
         </section>
     )
 }
