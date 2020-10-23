@@ -39,6 +39,13 @@ Northcoders News has articles which are divided into topics. Each article has us
 16. find a link to the back-end repository of the project in the readme.
 17. find a link to the hosted version of the back-end project in the readme.
 
+## _If time, and if you have implemented it in your back-end API..._
+
+**As a user, I should be able to...**
+
+18. navigate over pages of articles (e.g. using pagination or infinite scroll). (not yet implemented)
+19. navigate over pages of comments (e.g. using pagination or infinite scroll). (not yet implemented)
+
 ## Diagrams
 
 ### Views
