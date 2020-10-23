@@ -6,9 +6,8 @@ const Header = (props) => {
 
     return (
     <header className="header">
-        <Link to='/'><h1>Northcoders News</h1></Link>
+        <Link to='/' style={{ color: 'inherit', textDecoration: 'none' }}><h1>Northcoders News</h1></Link>
         <h3>Welcome {props.loggedInUser}</h3>
-        {/* <h4>A.K.A: {props.usersName}</h4> */}
     </header>
     )
 }

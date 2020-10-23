@@ -55,7 +55,7 @@ class ArticleList extends Component {
         if (isLoading) return <Loader/>
 
         return (
-            <main className="main">
+            <main >
                 <Sorter addSort={this.addSort} />
               <h3>{listTitle}</h3>
               <ul>

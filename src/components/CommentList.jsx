@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '../components/Button';
 import Loader from '../components/Loader';
 import {getArticleComments, deleteCommentById} from '../../src/utils/api';
 import CommentCard from '../components/CommentCard'
@@ -63,25 +64,25 @@ class CommentList extends Component {
 
         return (
             this.props.showComments &&
-            <div className="commentList">
+            <main>
             <CommentPoster article_id={this.props.article_id} addComment={this.addComment} author={this.props.loggedInUser}/>
                 <h2>Comments:</h2>
-                <ul>
+                <ul className="unpaddedList">
                     {comments.map(comment => {
                       return (
-                          <div>
+                          <div className="commentList">
                             <CommentCard {...comment} key={comment.comment_id} loggedInUser={this.props.loggedInUser}/>
-                            <button
+                            <Button
                             disabled={comment.author !== this.props.loggedInUser}
                             onClick={() => this.deleteComment(comment.comment_id)}
                             >
                                 Delete Comment
-                            </button>
+                            </Button>
                           </div>
                       )
                     })}
                 </ul>
-            </div>
+            </main>
         )
     };
 

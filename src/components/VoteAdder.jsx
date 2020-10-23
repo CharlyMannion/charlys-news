@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '../components/Button';
 import {increaseArticleVotesByValue, increaseCommentVotesByValue} from '../utils/api';
 
 class VoteAdder extends Component {
@@ -35,17 +36,17 @@ class VoteAdder extends Component {
         const {userVoteCount} = this.state;
         return (
             <div>
-                <button 
+                <Button 
                 disabled={userVoteCount === 1}
                 onClick={() => this.handleVote(1)} value={1}>
                     Vote Up
-                </button>
+                </Button>
                 <p>Votes: {votes + userVoteCount}</p>
-                <button 
+                <Button 
                 disabled={userVoteCount === -1}
                 onClick={() => this.handleVote(-1)} value={-1}>
                     Vote Down 
-                </button>
+                </Button>
             </div>
         )
     }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '../components/Button';
 import {postComment} from '../utils/api';
 import ErrorDisplay from '../components/ErrorDisplay';
 
@@ -39,11 +40,13 @@ class CommentPoster extends Component {
             <ErrorDisplay {...error}/>
         )
         return (
-            <form onSubmit={this.handleSubmit}> 
+            <form className="commentForm" onSubmit={this.handleSubmit}> 
                 <label>
-                    <textarea onChange={this.handleChange} name="body" type="text" value={body} required />
+                    <textarea className="textArea" onChange={this.handleChange} name="body" type="text" value={body} required />
                 </label>
-                <input type="submit" value="Add comment" />
+                <Button onClick={this.handleSubmit}>Add Comment</Button>
+
+                {/* <input type="submit" value="Add comment" /> */}
             </form>
         )
     }

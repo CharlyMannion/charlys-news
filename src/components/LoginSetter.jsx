@@ -31,9 +31,9 @@ class LoginSetter extends Component {
             <ErrorDisplay {...error}/>
         )
         return (
-            <label htmlFor='user-drop-down'>
+            <label className="user-displayer" htmlFor='user-drop-down'>
                 Choose User:
-                <select id="soruser-drop-downter" required onChange={this.handleChange}>
+                <select className="select" id="soruser-drop-downter" required onChange={this.handleChange}>
                     <option value="">select an option</option>
                     <option value="cooljmessy" onChange={this.handleChange}>cooljmessy</option>
                     <option value="tickle122" onChange={this.handleChange}>tickle122</option>

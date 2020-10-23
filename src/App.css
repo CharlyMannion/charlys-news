@@ -1,69 +1,127 @@
 .App {
     text-align: center;
+    background-color: rgba(253, 247, 250, 1);
+    color: rgba(83, 107, 120, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.unpaddedList {
+    padding: 0%;
+}
+
+.select {
+    background: 'grey';
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid rgba(99, 112, 129, 1);
+    border-radius: 3px;
+}
+
+.commentForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0%;
 }
 
 .header {
     /* grid-area: header; */
-    background-color: #282c34;
+    background-color: rgba(99, 112, 129, 1);
     min-height: 10vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.aside {
-    border: 2px solid yellow;
+    color: rgba(253, 247, 250, 1);
 }
 
 .nav {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
+    background-color: rgba(99, 112, 129, 1);
+    min-height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: rgba(253, 247, 250, 1);
+}
+
+.user-displayer {
+    background-color: (60, 60, 60, 1);
+    min-height: 10vh;
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: rgba(83, 107, 120, 1);
 }
 
 .main {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.commentList {
-    border: 2px solid yellow;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 40vh;
 }
 
 .commentCard {
-    border: 2px solid pink;
+    /* border: 2px solid blue; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 5vh;
-    width: 60vh;
-    background: white;
-    padding: 1rem 2rem;
+    width: 40vh;
+    background-color: (60, 60, 60, 1);
+    /* padding: 1rem 2rem; */
     margin: 1rem 0;
-    box-shadow: 2px 2px 5px 0px rgba(128, 128, 128, 0.308);
+    /* box-shadow: 2px 2px 5px 0px rgba(128, 128, 128, 0.308); */
+    background-color: rgba(253, 247, 250, 1);
 }
 
-.articleCard {
-    border: 2px solid pink;
+.commentList {
+    background-color: (60, 60, 60, 1);
+    border: 2px solid rgba(99, 112, 129, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 20vh;
-    width: 60vh;
+    width: 40vh;
     background: white;
-    padding: 2rem 4rem;
-    margin: 1rem 0;
-    box-shadow: 2px 2px 5px 0px rgba(128, 128, 128, 0.308);
+    /* padding: 1rem 2rem; */
+    margin: 1rem;
+    /* box-shadow: 2px 2px 5px 0px rgba(255, 55, 166, 1); */
+    background-color: rgba(253, 247, 250, 1);
+}
+
+.articleCard {
+    background-color: (60, 60, 60, 1);
+    border: 2px solid rgba(99, 112, 129, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    min-height: 10vh;
+    width: 40vh;
+    background: white;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    /* box-shadow: 2px 2px 5px 0px rgba(128, 128, 128, 0.308); */
+    background-color: rgba(253, 247, 250, 1);
+    text-align: left;
 }
 
 .articleCard:hover {
@@ -72,11 +130,17 @@
 }
 
 .single-page-article {
-    border: 2px solid blueviolet;
+    /* border: 2px solid rgba(99, 112, 129, 1); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vh;
     background: white;
-    padding: 1rem 2rem;
+    /* padding: 1rem 2rem; */
     margin: 1rem;
-    box-shadow: 2px 2px 5px 0px rgba(128, 128, 128, 0.308);
+    /* box-shadow: 2px 2px 5px 0px rgba(255, 55, 166, 1); */
+    background-color: rgba(253, 247, 250, 1);
 }
 
 .error-display {
@@ -84,14 +148,15 @@
     font-weight: bold;
     background: white;
     border: 2px dashed red;
-    padding: 1rem;
+    padding: 1rem 2rem;
     margin: 1rem;
+    width: 40vh;
 }
 
 .footer {
-    /* grid-area: footer; */
-    background-color: #282c34;
+    background-color: rgba(99, 112, 129, 1);
     min-height: 10vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

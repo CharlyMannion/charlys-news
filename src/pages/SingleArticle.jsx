@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+import Button from '../components/Button';
 import ErrorDisplay from '../components/ErrorDisplay';
 import Loader from '../components/Loader';
 import {getArticleByID} from '../../src/utils/api';
@@ -53,7 +55,8 @@ class SingleArticle extends Component {
             <p>{article_info.body}</p>
             <VoteAdder votes={article_info.votes} article_id={article_info.article_id} /> 
             <p>Comment Count: {article_info.comment_count}</p>
-            <button onClick={this.toggleComments}>show/hide comments</button>
+            <Button onClick={this.toggleComments}>show/hide comments</Button>
+            <br></br>
             <CommentList showComments={this.state.showComments} article_id={article_info.article_id} loggedInUser={this.props.loggedInUser} />
             </main>
         )

@@ -5,7 +5,7 @@ import { Link } from '@reach/router';
 const ArticleCard = (props) => {
     return (
         <section className="articleCard">
-            <Link to={`/article/${props.article_id}`}>
+            <Link to={`/article/${props.article_id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
                 <h3>{props.title}</h3>
             </Link>
             <p>Topic: {props.topic}</p>

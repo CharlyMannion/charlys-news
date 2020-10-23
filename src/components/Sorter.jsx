@@ -15,7 +15,7 @@ class Sorter extends Component {
         return (
             <label htmlFor='sorter'>
                 Sort by:
-                <select id="sorter" required onChange={this.handleChange}>
+                <select className="select" id="sorter" required onChange={this.handleChange}>
                     <option value="">select an option</option>
                     <option value="comment_count" onChange={this.handleChange}>Most Comments</option>
                     <option value="votes" onChange={this.handleChange}>Most Votes</option>

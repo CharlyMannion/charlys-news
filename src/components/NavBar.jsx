@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import Button from '../components/Button';
 import {Link} from '@reach/router';
 import Loader from '../components/Loader';
 import ErrorDisplay from '../components/ErrorDisplay';
 import {getRoute} from '../utils/api';
+import styled from 'styled-components';
 
 class NavBar extends Component {
     state = {
@@ -36,7 +38,7 @@ class NavBar extends Component {
             <div className="nav">
             <nav>
                 {topics.map(topic => {
-                    return <Link to ={`/topics/${topic.slug}`} key={topic.slug}><button>{topic.slug}</button></Link>
+                    return <Link to ={`/topics/${topic.slug}`} key={topic.slug}><Button>{topic.slug}</Button></Link>
                 })}
             </nav>
             </div>
