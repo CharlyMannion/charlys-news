@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import Button from '../components/Button';
 import ErrorDisplay from '../components/ErrorDisplay';
 import Loader from '../components/Loader';

@@ -165,46 +165,26 @@
     color: white;
 }
 
-
-/* 
 @media only screen and (min-width: 600px) {
-    .App {
-        display: grid;
-        grid-template-columns: 100px auto;
-        grid-template-rows: 100px 200px auto;
-        grid-template-areas: "header header" "aside search" "asid main";
-    }
-    .aside {
-        grid-area: aside;
-    }
-    .nav {
-        grid-area: search;
+    .user-displayer {
+        width: 120vh;
     }
     .main {
-        grid-area: main;
-        display: flex;
-        flex-wrap: wrap;
+        width: 120vh;
     }
-    .header {
-        grid-area: header;
-        background-color: #282c34;
-        min-height: 10vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: calc(10px + 2vmin);
-        color: white;
+    .commentCard {
+        width: 120vh;
     }
-    .footer {
-        grid-area: footer;
-        background-color: #282c34;
-        min-height: 10vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: calc(10px + 2vmin);
-        color: white;
+    .commentList {
+        width: 120vh;
     }
-} */
+    .articleCard {
+        width: 120vh;
+    }
+    .single-page-article {
+        width: 120vh;
+    }
+    .error-display {
+        width: 120vh;
+    }
+}

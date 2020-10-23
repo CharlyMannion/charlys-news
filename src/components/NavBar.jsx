@@ -4,7 +4,6 @@ import {Link} from '@reach/router';
 import Loader from '../components/Loader';
 import ErrorDisplay from '../components/ErrorDisplay';
 import {getRoute} from '../utils/api';
-import styled from 'styled-components';
 
 class NavBar extends Component {
     state = {
